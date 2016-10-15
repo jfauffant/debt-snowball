@@ -4,6 +4,9 @@ angular.module('dbTable', [])
 	var self = this;
 
 	$scope.debtParams = new NgTableParams({}, { dataset: as.getDebt()});
+	$scope.incomeParams = new NgTableParams({},{dataset:as.getIncome()});
+	$scope.onceParams = new NgTableParams({},{dataset:as.getOneTime()});
+	$scope.recurringParams = new NgTableParams({},{dataset:as.getBills()});
 })
 .directive('snowballTable',function(){
 	return {

@@ -60,6 +60,10 @@
 				<label class=col-xs-2>Fixed Payment?</label>
 				<input type=checkbox ng-model="account.fixedPayment"/>
 			</div>
+			<div ng-if="account.type == 'income'" class="clear row">
+				<label class=col-xs-2>Amount</label>
+				<input type=number step="0.01" ng-model="account.amount"/>
+			</div>
 			<div class="clear row">
 				<label class=col-xs-2>Due Date</label>
 				<select ng-model="account.period" ng-change=changePeriod(account)>
