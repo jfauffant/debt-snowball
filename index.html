@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" ng-app="debtSnowball">
+  <head>
+    <meta charset="utf-8">
+    <title>Debt Snowball Calculator</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+	
+	<!-- ng table-->
+	<link rel="stylesheet" href="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.min.css">
+	<script src="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.js"></script>
+	
+	<script src="form/form.js"></script>
+	<script src="graph/graph.js"></script>
+	<script src="table/table.js"></script>
+	
+    <script src="app.js"></script>
+	<style>
+	    .headerBar{
+			text-align:center;
+			border-top:1px solid black;
+			border-bottom:1px solid black;
+		}
+	</style>
+  </head>
+  <body>
+	<div class=col-xs-12 style="margin-bottom:45px">
+		<div class="col-xs-4 headerBar" style="border-left:1px solid black">
+			<a href="/#!/graph">Graph</a>
+		</div>
+		<div class="col-xs-4 headerBar" style="border:1px solid black;">
+			<a href="/#!/form">Form</a>
+		</div>
+		<div class="col-xs-4 headerBar" style="border-right:1px solid black">
+			<a href="/#!/table">Table</a>
+		</div>
+	</div>
+    <div class="view-container">
+      <div ng-view class="view-frame"></div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<style>
+	h2{
+		border:1px solid black;
+		background-color:gray;
+		color:white;
+		clear:both;
+		padding-left:15px;
+	}
+</style>
+<h2>Income</h2>
+
+<table ng-table="debtParams" class="table" show-filter="true">
+    <tr ng-repeat="debt in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">{{debt.name}}</td>
+        <td title="'Balance'" filter="{ balance: 'number'}" sortable="'balance'">{{debt.balance}}</td>
+		<td title="'Period'" filter="{ period: 'number'}" sortable="'period'">{{debt.period}}</td>
+		<td title="'fixedPayment'" filter="{ fixedPayment: 'text'}" sortable="'fixedPayment'">{{debt.fixedPayment}}</td>
+		<td title="'Due Date'" filter="{ dueDate: 'number'}" sortable="'dueDate'">{{debt.dueDate}}</td>
+		<td title="'Due Date 2'" filter="{ dueDate2: 'number'}" sortable="'dueDate2'">{{debt.dueDate2}}</td>
+		<td title="'Interest'" filter="{ interest: 'number'}" sortable="'interest'">{{debt.interest}}</td>
+    </tr>
+</table>
+
+<h2>Debt</h2>
+
+<table ng-table="debtParams" class="table" show-filter="true">
+    <tr ng-repeat="debt in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">{{debt.name}}</td>
+        <td title="'Balance'" filter="{ balance: 'number'}" sortable="'balance'">{{debt.balance}}</td>
+		<td title="'Period'" filter="{ period: 'number'}" sortable="'period'">{{debt.period}}</td>
+		<td title="'fixedPayment'" filter="{ fixedPayment: 'text'}" sortable="'fixedPayment'">{{debt.fixedPayment}}</td>
+		<td title="'Due Date'" filter="{ dueDate: 'number'}" sortable="'dueDate'">{{debt.dueDate}}</td>
+		<td title="'Due Date 2'" filter="{ dueDate2: 'number'}" sortable="'dueDate2'">{{debt.dueDate2}}</td>
+		<td title="'Interest'" filter="{ interest: 'number'}" sortable="'interest'">{{debt.interest}}</td>
+    </tr>
+</table>
+
+<h2>Recurring Bills</h2>
+
+<table ng-table="debtParams" class="table" show-filter="true">
+    <tr ng-repeat="debt in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">{{debt.name}}</td>
+        <td title="'Balance'" filter="{ balance: 'number'}" sortable="'balance'">{{debt.balance}}</td>
+		<td title="'Period'" filter="{ period: 'number'}" sortable="'period'">{{debt.period}}</td>
+		<td title="'fixedPayment'" filter="{ fixedPayment: 'text'}" sortable="'fixedPayment'">{{debt.fixedPayment}}</td>
+		<td title="'Due Date'" filter="{ dueDate: 'number'}" sortable="'dueDate'">{{debt.dueDate}}</td>
+		<td title="'Due Date 2'" filter="{ dueDate2: 'number'}" sortable="'dueDate2'">{{debt.dueDate2}}</td>
+		<td title="'Interest'" filter="{ interest: 'number'}" sortable="'interest'">{{debt.interest}}</td>
+    </tr>
+</table>
+
+<h2>One Time Payments</h2>
+
+<table ng-table="debtParams" class="table" show-filter="true">
+    <tr ng-repeat="debt in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">{{debt.name}}</td>
+        <td title="'Balance'" filter="{ balance: 'number'}" sortable="'balance'">{{debt.balance}}</td>
+		<td title="'Period'" filter="{ period: 'number'}" sortable="'period'">{{debt.period}}</td>
+		<td title="'fixedPayment'" filter="{ fixedPayment: 'text'}" sortable="'fixedPayment'">{{debt.fixedPayment}}</td>
+		<td title="'Due Date'" filter="{ dueDate: 'number'}" sortable="'dueDate'">{{debt.dueDate}}</td>
+		<td title="'Due Date 2'" filter="{ dueDate2: 'number'}" sortable="'dueDate2'">{{debt.dueDate2}}</td>
+		<td title="'Interest'" filter="{ interest: 'number'}" sortable="'interest'">{{debt.interest}}</td>
+    </tr>
+</table>

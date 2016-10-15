@@ -1,0 +1,94 @@
+<style>
+	.clear.row{
+		margin-bottom:5px;
+		clear:both;
+	}
+	select, input{
+		height:26px;
+	}
+</style>
+
+<form>
+		<div class="clear row">
+			<label class=col-xs-2>Name</label>
+			<input class=col-xs-4 ng-model="account.name" type="text"/>
+		</div>
+		<div class="clear row">
+			<label class=col-xs-2>Type</label>
+			<select class=col-xs-4 ng-model="account.type" ng-change="removeExtras()">
+				<option value="debt">Debt</option>
+				<option value="income">Income</option>
+				<option value="recurring">Recurring Bill</option>
+				<option value="once">One off payment</option>
+			</select>
+		</div>
+		<div ng-if="account.type=='debt'">
+			<div class="clear row">
+				<label class=col-xs-2>Balance</label>
+				<input class=col-xs-4 ng-model="account.balance" type="number" step=".01"/>
+			</div>
+			<div class="clear row">
+				<label class=col-xs-2>Percent Interest</label>
+				<input class=col-xs-4 ng-model="account.interest" type="number" step='.01'/>
+			</div>
+			<div ng-if="account.interest==0">
+				<div  class="clear row">
+					<label class=col-xs-2>Expiration</label>
+					<input class=col-xs-4 ng-model="account.zeroPctExpires" type="date"/>
+				</div>
+				<div class="clear row">
+					<label class=col-xs-2>Percent After 0</label>
+					<input class=col-xs-4 ng-model="account.nextPct" type="number" step=".01"/>
+				</div>
+			</div>
+		</div>
+		<div ng-if="account.type=='once'">
+			<div class="clear row">
+				<label class=col-xs-2>Amount</label>
+				<input type=number ng-model="account.balance"/>
+			</div>
+			<div class="clear row">
+				<label class=col-xs-2>Due Date</label>
+				<input type=date ng-model="account.dueDate"/>
+			</div>
+		</div>
+		<div ng-if="account.type && account.type != 'once'">
+			<div ng-if="account.type !='income'" class="clear row">
+				<label class=col-xs-2>Minimum Payment</label>
+				<input type=number step="0.01" ng-model="accont.minPayment"/>
+				<div style="clear:both"></div>
+				<label class=col-xs-2>Fixed Payment?</label>
+				<input type=checkbox ng-model="account.fixedPayment"/>
+			</div>
+			<div class="clear row">
+				<label class=col-xs-2>Due Date</label>
+				<select ng-model="account.period" ng-change=changePeriod(account)>
+					<option value="weekly">Weekly</option>
+					<option value="biWeekly">Bi-Weekly</option>
+					<option value="semiMonthly">Semi-Monthly</option>
+					<option value="monthly">Monthly</option>
+					<option value="quarterly">Quarterly</option>
+					<option value="semiAnnually">Semi-Annually</option>
+					<option value="annually">Anually</option>
+				</select>
+			</div>
+			<div ng-if="showNumber || showDays"class="clear row">
+				<label class=col-xs-2>On Every</label>
+				<input ng-if="showNumber" type=number ng-model="account.dueDate"/>
+				<div ng-if='showSecondNumber'>
+					<label class=col-xs-2>And</label>
+					<input type="number" ng-model="account.dueDate2"/>
+				</div>
+				<select ng-if="showDays" ng-model="account.dueDate">
+					<option value="0">Sunday</option>
+					<option value="1">Monday</option>
+					<option value="2">Tuesday</option>
+					<option value="3">Wednesday</option>
+					<option value="4">Thursday</option>
+					<option value="5">Friday</option>
+					<option value="6">Saturday</option>
+				</select>
+			</div>
+		</div>
+		<input type="submit" ng-click="update(account)"/>
+	</form>
